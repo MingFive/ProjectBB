@@ -1,0 +1,16 @@
+{
+    "name": "ProjectBB.Editor",
+    "rootNamespace": "ProjectBB.Editor",
+    "references": ["ProjectBB.GamePlay", "ProjectBB.LogicCore"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

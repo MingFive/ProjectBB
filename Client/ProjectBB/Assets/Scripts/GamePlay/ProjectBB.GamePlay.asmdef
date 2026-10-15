@@ -1,0 +1,17 @@
+{
+    "name": "ProjectBB.GamePlay",
+    "rootNamespace": "ProjectBB.GamePlay",
+    "references": [
+        "ProjectBB.LogicCore",
+        "ProjectBB.Common"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

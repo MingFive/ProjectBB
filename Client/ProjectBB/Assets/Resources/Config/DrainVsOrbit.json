@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "battle": {
+    "widthCells": 10,
+    "heightCells": 10,
+    "ballRadiusCells": 0.5,
+    "standardSpeedCellsPerSecond": 3.535534,
+    "speedIndex": 100,
+    "seed": 20261010,
+    "maxBattleMs": 180000,
+    "firstBallId": "red",
+    "secondBallId": "blue"
+  },
+  "skills": [
+    {
+      "id": "burst",
+      "kind": "area",
+      "speedCellsPerSecond": 0,
+      "radiusCells": 2,
+      "lifetimeMs": 1,
+      "damage": 25
+    },
+    {
+      "id": "mushroom",
+      "kind": "trap",
+      "speedCellsPerSecond": 0,
+      "radiusCells": 0.3,
+      "lifetimeMs": 15000,
+      "damage": 15,
+      "maxPerOwner": 12
+    },
+    {
+      "id": "axes",
+      "kind": "orbit",
+      "speedCellsPerSecond": 0,
+      "radiusCells": 0.22,
+      "lifetimeMs": 0,
+      "damage": 5,
+      "orbitRadiusCells": 1.2,
+      "angularSpeedDegrees": 180,
+      "hitIntervalMs": 350,
+      "maxPerOwner": 2
+    },
+    {
+      "id": "vampire",
+      "kind": "drain",
+      "speedCellsPerSecond": 0,
+      "radiusCells": 0.5,
+      "lifetimeMs": 1200,
+      "damage": 5,
+      "hitIntervalMs": 200,
+      "speedMultiplierBps": 3500,
+      "healRatioBps": 10000
+    }
+  ],
+  "traits": [
+    {
+      "id": "superman",
+      "trigger": "periodic",
+      "skillId": "burst",
+      "periodMs": 5000,
+      "fireOnStart": false
+    },
+    {
+      "id": "teemo",
+      "trigger": "onWall",
+      "skillId": "mushroom",
+      "periodMs": 250,
+      "fireOnStart": false
+    },
+    {
+      "id": "berserker",
+      "trigger": "onStart",
+      "skillId": "axes",
+      "periodMs": 1000,
+      "fireOnStart": false
+    },
+    {
+      "id": "vampire_contact",
+      "trigger": "onContact",
+      "skillId": "vampire",
+      "periodMs": 1500,
+      "fireOnStart": false
+    }
+  ],
+  "balls": [
+    {
+      "id": "red",
+      "maxHp": 500,
+      "collisionDamage": 10,
+      "damageImmune": false,
+      "traitIds": [
+        "vampire_contact"
+      ]
+    },
+    {
+      "id": "blue",
+      "maxHp": 500,
+      "collisionDamage": 10,
+      "damageImmune": false,
+      "traitIds": [
+        "berserker"
+      ]
+    }
+  ]
+}

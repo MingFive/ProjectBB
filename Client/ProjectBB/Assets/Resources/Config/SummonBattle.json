@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "battle": {
+    "widthCells": 10,
+    "heightCells": 10,
+    "ballRadiusCells": 0.5,
+    "standardSpeedCellsPerSecond": 3.535534,
+    "speedIndex": 100,
+    "seed": 20261010,
+    "maxBattleMs": 180000,
+    "firstBallId": "red",
+    "secondBallId": "blue"
+  },
+  "skills": [
+    {
+      "id": "summon_ball",
+      "kind": "summon",
+      "speedCellsPerSecond": 3,
+      "radiusCells": 0.3,
+      "lifetimeMs": 10000,
+      "damage": 10,
+      "summonBallId": "minion",
+      "mass": 0.5,
+      "maxPerOwner": 10
+    },
+    {
+      "id": "shot",
+      "kind": "circleProjectile",
+      "speedCellsPerSecond": 12,
+      "radiusCells": 0.15,
+      "lifetimeMs": 5000,
+      "damage": 10,
+      "bounceOnWall": true
+    }
+  ],
+  "traits": [
+    {
+      "id": "summoner",
+      "trigger": "periodic",
+      "skillId": "summon_ball",
+      "periodMs": 2000,
+      "fireOnStart": true
+    },
+    {
+      "id": "shoot",
+      "trigger": "periodic",
+      "skillId": "shot",
+      "periodMs": 1000,
+      "fireOnStart": false
+    }
+  ],
+  "balls": [
+    {
+      "id": "red",
+      "maxHp": 500,
+      "collisionDamage": 10,
+      "damageImmune": false,
+      "traitIds": [
+        "summoner",
+        "shoot"
+      ]
+    },
+    {
+      "id": "blue",
+      "maxHp": 500,
+      "collisionDamage": 10,
+      "damageImmune": false,
+      "traitIds": [
+        "summoner",
+        "shoot"
+      ]
+    },
+    {
+      "id": "minion",
+      "maxHp": 30,
+      "collisionDamage": 10,
+      "damageImmune": false,
+      "traitIds": []
+    }
+  ]
+}

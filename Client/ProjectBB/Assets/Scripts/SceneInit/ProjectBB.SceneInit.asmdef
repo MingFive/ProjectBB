@@ -1,0 +1,19 @@
+{
+    "name": "ProjectBB.SceneInit",
+    "rootNamespace": "ProjectBB.SceneInit",
+    "references": [
+        "ProjectBB.LogicCore",
+        "ProjectBB.Common",
+        "ProjectBB.GamePlay",
+        "ProjectBB.View"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

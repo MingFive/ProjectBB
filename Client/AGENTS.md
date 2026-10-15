@@ -71,7 +71,7 @@ ContextRoot/Project Instructions.md 仅作兼容导航；ContextRoot/AGENTS.md �
 
 - LogicCore 纯 C#；几何与公式不接收 Unity 或 GamePlay 对象。GamePlay 管战斗规则，View 管表现，SceneInit 管装配。
 - BattleSession 统一战斗时钟和生命周期；不能让多个 Update/Tick 重复驱动同一状态。
-- 运动与接触是战斗逻辑事实，Transform 是投影。球球碰撞统一裁决，不由双方分别重复结算。
+- 实体小球、分身和物理召唤物采用 Unity Physics2D Dynamic（双球与矩形墙已验证，DEV-009 扩展实体已实现待验证）；由 BattleSession 统一驱动物理步，GamePlay 读取模拟事实，View Transform 只作表现投影。不得让 BallMotor 与动态刚体重复求解同一运动；球球接触统一归并，不由双方分别重复结算。具体规则见 35。
 - CombatManager 管承伤、治疗、状态与死亡；SkillManager 管技能和命中转发，CombatManager 不反向依赖 SkillManager。
 - 同次球球互伤必须完成双方既定请求后再提交死亡；具体规则按 70，不使用回调先后决定胜负。
 - Buff 是临时状态，Trait 是长期能力。Trait 不重写技能内部碰撞、索敌和伤害。
@@ -88,6 +88,7 @@ ContextRoot/Project Instructions.md 仅作兼容导航；ContextRoot/AGENTS.md �
 
 ## 验证与交付
 
+- 用户已于 2026-10-14 明确：Unity 的刷新、编译、测试、Play Mode 与场景操作由用户手动执行，助手提供步骤并读取反馈。不得使用 UI 自动化、Unity 命令行或请求文件代操作；除非用户之后明确改变此偏好。可执行独立静态检查，但必须与 Unity 验收区分。
 - 选择与改动相称的验证：文档检查路径和一致性；几何、去重、批次、生命周期等核心逻辑要有针对性验证。
 - 不执行 dotnet build 或寻找 .sln 代替 Unity 编译。Unity 编译与运行以实际 Editor 结果为准；无法执行时明确留待验证。
 - 静态检查、编译、Play Mode、平台构建与真机性能分别记录，不夸大通过范围。

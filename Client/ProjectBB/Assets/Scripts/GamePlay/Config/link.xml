@@ -1,0 +1,10 @@
+<linker>
+  <!-- 手写配置记录只经 JSON 反射创建；保留字段，平台构建另行验证。 -->
+  <assembly fullname="ProjectBB.GamePlay">
+    <type fullname="ProjectBB.GamePlay.BattleContentRows" preserve="all" />
+    <type fullname="ProjectBB.GamePlay.BattleRow" preserve="all" />
+    <type fullname="ProjectBB.GamePlay.SkillRow" preserve="all" />
+    <type fullname="ProjectBB.GamePlay.TraitRow" preserve="all" />
+    <type fullname="ProjectBB.GamePlay.BallRow" preserve="all" />
+  </assembly>
+</linker>

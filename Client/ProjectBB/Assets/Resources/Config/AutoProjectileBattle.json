@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "battle": {
+    "widthCells": 10,
+    "heightCells": 10,
+    "ballRadiusCells": 0.5,
+    "standardSpeedCellsPerSecond": 3.535534,
+    "speedIndex": 100,
+    "seed": 20261010,
+    "maxBattleMs": 180000,
+    "firstBallId": "red",
+    "secondBallId": "blue"
+  },
+  "skills": [
+    {
+      "id": "circle_shot",
+      "kind": "circleProjectile",
+      "speedCellsPerSecond": 12,
+      "radiusCells": 0.15,
+      "lifetimeMs": 60000,
+      "damage": 10,
+      "spawnAnchor": "caster",
+      "spawnOffsetXCells": 0,
+      "spawnOffsetYCells": 0,
+      "directionMode": "towardTarget",
+      "directionAngleDegrees": 0,
+      "randomDirection": true,
+      "bounceOnWall": true
+    }
+  ],
+  "traits": [
+    {
+      "id": "auto_shot",
+      "trigger": "periodic",
+      "skillId": "circle_shot",
+      "periodMs": 1000,
+      "fireOnStart": false
+    }
+  ],
+  "balls": [
+    { "id": "red", "maxHp": 100, "collisionDamage": 10, "damageImmune": false, "traitIds": ["auto_shot"] },
+    { "id": "blue", "maxHp": 100, "collisionDamage": 10, "damageImmune": false, "traitIds": ["auto_shot"] }
+  ]
+}
